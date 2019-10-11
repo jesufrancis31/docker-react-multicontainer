@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+     {
+       "name": "client",
+       "image": "jesufrancis31/docker-multi-worker",
+       "hostname": "client",
+       "essential": false
+     },
+     {
+       "name": "server",
+       "image": "jesufrancis31/docker-multi-server",
+       "hostname": "api",
+       "essential": false
+     },
+     {
+       "name": "worker",
+       "image": "jesufrancis31/docker-multi-worker",
+       "hostname": "worker",
+       "essential": false
+     }
+  ]
+}
