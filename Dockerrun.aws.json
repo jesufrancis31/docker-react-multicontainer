@@ -3,7 +3,7 @@
   "containerDefinitions": [
      {
        "name": "client",
-       "image": "jesufrancis31/docker-multi-worker",
+       "image": "jesufrancis31/docker-multi-client",
        "hostname": "client",
        "essential": false
      },
@@ -18,6 +18,19 @@
        "image": "jesufrancis31/docker-multi-worker",
        "hostname": "worker",
        "essential": false
-     }
-  ]
+     },
+     {
+       "name": "nginx",
+       "image": "jesufrancis31/docker-multi-nginx",
+       "hostname": "nginx",
+       "essential": true,
+       "portMappings": [
+           {
+             "hostPort": 80,
+             "containerPort": 80
+          }
+        ],
+        "links": ["client", "server"]
+        }
+    ]
 }

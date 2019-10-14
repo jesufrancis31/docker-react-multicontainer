@@ -25,15 +25,15 @@ after_success:
   - docker push jesufrancis31/docker-multi-worker
 deploy:
    provider: elasticbeanstalk
-   region: ap-south-1
+   region: ap-south-a
    app: docker-react-multi-container
    env: DockerReactMultiContainer-env
    bucket_name: elasticbeanstalk-ap-south-1-334342053018
    bucket_path: docker-react-multi-container
    on:
     branch: master
-   access_key_id:
-      secure: $AWS_ACCESS_KEY
+   access_key_id: 
+     secure: $AWS_ACCESS_KEY
    secret_access_key:
       secure: $AWS_SECRET_KEY
-   
+
